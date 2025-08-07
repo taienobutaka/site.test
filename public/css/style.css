@@ -571,24 +571,41 @@ body {
   font-weight: 600;
 }
 
-/* Video Section */
-.video-section {
-  margin-bottom: 40px;
-  max-width: 500px;
+/* Video Section & Ad Container (3カラムレイアウト対応) */
+.video-ad-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
   margin: 0 auto 40px auto;
-  text-align: center;
   padding: 0 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* 左側バナー広告エリア（将来追加予定） */
+.video-left-ads {
+  width: 300px;
+  min-height: 600px;
+  /* 将来的にここに左側バナー広告を配置 */
+  /* 現在は空のスペースとして予約 */
+}
+
+/* Video Section（固定幅で中央配置） */
+.video-section {
+  width: 500px; /* 固定幅を維持 */
+  flex-shrink: 0; /* 幅の縮小を防ぐ */
   background: #ffffff;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  padding: 0;
 }
 
 .video-section .section-title {
   font-size: 1.6rem;
   color: #2c3e50;
   margin-bottom: 25px;
-  padding: 20px 0 15px 0;
+  padding: 20px 20px 15px 20px;
   border-bottom: 3px solid #ff6b35;
   font-weight: 600;
   text-align: center;
@@ -596,11 +613,115 @@ body {
   width: 100%;
 }
 
+/* 右側バナー広告エリア */
+.video-right-ads {
+  width: 300px;
+  min-height: 600px;
+}
+
+.rotating-banner-container {
+  position: relative;
+  height: 100%;
+  min-height: 600px;
+}
+
+.rotating-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.5s ease-in-out;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.rotating-banner.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.rotating-banner:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.banner-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.banner-image {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.banner-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.banner-company {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.banner-cta {
+  background: #c44a3c;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.banner-cta:hover {
+  background: #a63a2e;
+}
+
+.banner-check {
+  background: #e74c3c;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
 /* コメントセクション */
 .comment-section {
   background: #f8f9fa;
   padding: 20px;
-  margin-bottom: 20px;
+  margin: 0 20px 20px 20px;
   border-radius: 10px;
   text-align: left;
 }
@@ -726,23 +847,50 @@ body {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  margin: 0 20px 20px 20px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* モバイル対応 */
 @media (max-width: 768px) {
+  .video-ad-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  /* モバイルでは左側広告エリアを非表示 */
+  .video-left-ads {
+    display: none;
+  }
+
+  /* モバイルでは動画セクションの幅を調整 */
   .video-section {
+    width: 100%;
     max-width: 350px;
     padding: 0 15px;
   }
 
   .video-section .section-title {
     font-size: 1.3rem;
-    padding: 15px 0 10px 0;
+    padding: 15px 15px 10px 15px;
   }
 
   .comment-section {
+    margin: 0 15px 15px 15px;
     padding: 15px;
+  }
+
+  .video-container {
+    margin: 0 15px 15px 15px;
   }
 
   .comment-list {
@@ -766,15 +914,17 @@ body {
     align-self: flex-end;
     width: 80px;
   }
-}
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+  /* モバイルでは右側広告エリアの幅を調整 */
+  .video-right-ads {
+    width: 100%;
+    max-width: 350px;
+    min-height: auto;
+  }
+
+  .rotating-banner-container {
+    min-height: 300px;
+  }
 }
 
 /* News Section */

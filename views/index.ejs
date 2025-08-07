@@ -266,69 +266,141 @@
 
       <!-- メインコンテンツエリア -->
       <main class="main-content">
-        <!-- 動画セクション（中央配置・縦長） -->
-        <section class="video-section">
-          <h2 class="section-title">【GiFレコーズラジオ】作業用BGM配信中</h2>
+        <!-- 動画セクションとバナー広告エリア（3カラムレイアウト対応） -->
+        <div class="video-ad-container">
+          <!-- 左側バナー広告エリア（将来追加予定） -->
+          <aside class="video-left-ads">
+            <!-- 将来的にここに左側のバナー広告を追加 -->
+          </aside>
 
-          <!-- コメントセクション（上部） -->
-          <div class="comment-section">
-            <div class="comment-header">
-              <h3>コメント</h3>
-              <span class="comment-count">12件</span>
-            </div>
-            <div class="comment-list">
-              <div class="comment-item">
-                <div class="comment-avatar">A</div>
-                <div class="comment-content">
-                  <div class="comment-author">匿名ユーザー</div>
-                  <div class="comment-text">
-                    作業用BGMとして最高です！集中できます。
+          <!-- 動画セクション（中央） -->
+          <section class="video-section">
+            <h2 class="section-title">【GiFレコーズラジオ】作業用BGM配信中</h2>
+
+            <!-- コメントセクション（上部） -->
+            <div class="comment-section">
+              <div class="comment-header">
+                <h3>コメント</h3>
+                <span class="comment-count">12件</span>
+              </div>
+              <div class="comment-list">
+                <div class="comment-item">
+                  <div class="comment-avatar">A</div>
+                  <div class="comment-content">
+                    <div class="comment-author">匿名ユーザー</div>
+                    <div class="comment-text">
+                      作業用BGMとして最高です！集中できます。
+                    </div>
+                    <div class="comment-time">5分前</div>
                   </div>
-                  <div class="comment-time">5分前</div>
                 </div>
-              </div>
-              <div class="comment-item">
-                <div class="comment-avatar">B</div>
-                <div class="comment-content">
-                  <div class="comment-author">視聴者</div>
-                  <div class="comment-text">リラックスできる音楽ですね。</div>
-                  <div class="comment-time">15分前</div>
-                </div>
-              </div>
-              <div class="comment-item">
-                <div class="comment-avatar">C</div>
-                <div class="comment-content">
-                  <div class="comment-author">リスナー</div>
-                  <div class="comment-text">
-                    いつも聞いています！ありがとうございます。
+                <div class="comment-item">
+                  <div class="comment-avatar">B</div>
+                  <div class="comment-content">
+                    <div class="comment-author">視聴者</div>
+                    <div class="comment-text">リラックスできる音楽ですね。</div>
+                    <div class="comment-time">15分前</div>
                   </div>
-                  <div class="comment-time">30分前</div>
+                </div>
+                <div class="comment-item">
+                  <div class="comment-avatar">C</div>
+                  <div class="comment-content">
+                    <div class="comment-author">リスナー</div>
+                    <div class="comment-text">
+                      いつも聞いています！ありがとうございます。
+                    </div>
+                    <div class="comment-time">30分前</div>
+                  </div>
                 </div>
               </div>
+              <div class="comment-input-area">
+                <input
+                  type="text"
+                  placeholder="コメントを入力..."
+                  class="comment-input"
+                />
+                <button class="comment-submit">投稿</button>
+              </div>
             </div>
-            <div class="comment-input-area">
-              <input
-                type="text"
-                placeholder="コメントを入力..."
-                class="comment-input"
-              />
-              <button class="comment-submit">投稿</button>
+
+            <!-- 動画コンテナ（下部） -->
+            <div class="video-container">
+              <iframe
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="作業用BGM"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              >
+              </iframe>
             </div>
-          </div>
+          </section>
 
-          <!-- 動画コンテナ（下部） -->
-          <div class="video-container">
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="作業用BGM"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-        </section>
+          <!-- 右側バナー広告エリア -->
+          <aside class="video-right-ads">
+            <div class="rotating-banner-container">
+              <!-- 広告1: WEBデザイン -->
+              <div class="rotating-banner active">
+                <div class="banner-icon">🔥</div>
+                <h3 class="banner-title">WEBデザイン5日間無料チャレンジ</h3>
+                <p class="banner-description">
+                  5日間を通してWebデザインの基礎・基本・デザイン制作を習得
+                </p>
+                <p class="banner-company">ぬるま湯デザイン塾</p>
+                <button class="banner-cta">開く ></button>
+              </div>
 
+              <!-- 広告2: 水虫治療 -->
+              <div class="rotating-banner">
+                <div class="banner-image">
+                  <div
+                    style="
+                      width: 80px;
+                      height: 60px;
+                      background: linear-gradient(135deg, #ff9a8b, #fecfef);
+                      border-radius: 8px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 24px;
+                    "
+                  >
+                    👣
+                  </div>
+                </div>
+                <h3 class="banner-title">
+                  夜10秒習慣「"爪まわりの水虫"の裏技」が凄い...たった1回でマジが...
+                </h3>
+                <p class="banner-company">ニュース合同会社</p>
+              </div>
+
+              <!-- 広告3: 糖尿病 -->
+              <div class="rotating-banner">
+                <div class="banner-image">
+                  <div
+                    style="
+                      width: 80px;
+                      height: 60px;
+                      background: linear-gradient(135deg, #a8e6cf, #88d8c0);
+                      border-radius: 8px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 24px;
+                    "
+                  >
+                    🥑
+                  </div>
+                </div>
+                <h3 class="banner-title">
+                  【糖尿病】HbA1c下げるには？→衝撃の方法が爆売
+                </h3>
+                <p class="banner-company">[PR] トーテラック</p>
+                <span class="banner-check">今すぐチェック ></span>
+              </div>
+            </div>
+          </aside>
+        </div>
         <div class="content-grid">
           <!-- 左カラム -->
           <div class="left-column">

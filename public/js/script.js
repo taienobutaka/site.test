@@ -1,7 +1,7 @@
 // バナー広告スライダー管理（自動切り替え）
 class BannerSliderManager {
   constructor() {
-    this.slides = document.querySelectorAll('.banner-slide');
+    this.slides = document.querySelectorAll(".banner-slide");
     this.currentSlide = 0;
     this.autoPlayInterval = 3000; // 3秒ごとに自動切り替え
     this.autoPlayTimer = null;
@@ -13,13 +13,13 @@ class BannerSliderManager {
     this.startAutoPlay();
 
     // マウスホバー時に自動再生を一時停止
-    const slider = document.querySelector('.banner-slider');
+    const slider = document.querySelector(".banner-slider");
     if (slider) {
-      slider.addEventListener('mouseenter', () => {
+      slider.addEventListener("mouseenter", () => {
         this.stopAutoPlay();
       });
 
-      slider.addEventListener('mouseleave', () => {
+      slider.addEventListener("mouseleave", () => {
         this.startAutoPlay();
       });
     }
@@ -27,18 +27,20 @@ class BannerSliderManager {
 
   goToSlide(index) {
     // 現在のスライドを非アクティブにする
-    this.slides[this.currentSlide].classList.remove('active');
+    this.slides[this.currentSlide].classList.remove("active");
 
     // 新しいスライドをアクティブにする
     this.currentSlide = index;
-    this.slides[this.currentSlide].classList.add('active');
+    this.slides[this.currentSlide].classList.add("active");
 
     // 1カラムの時にセクション全体の枠線を非表示にする
-    const bannerSection = document.querySelector('.banner-ad-section');
-    if (this.slides[this.currentSlide].querySelector('.single-column-container')) {
-      bannerSection.style.border = 'none';
+    const bannerSection = document.querySelector(".banner-ad-section");
+    if (
+      this.slides[this.currentSlide].querySelector(".single-column-container")
+    ) {
+      bannerSection.style.border = "none";
     } else {
-      bannerSection.style.border = '1px solid #000';
+      bannerSection.style.border = "1px solid #000";
     }
   }
 
@@ -212,17 +214,20 @@ class DynamicBannerManager {
                 <h3>${ad.title}</h3>
                 <p class="banner-subtitle">${ad.subtitle}</p>
                 <p class="banner-description">${ad.description}</p>
-                ${ad.instructor
-        ? `<p class="banner-instructor">${ad.instructor}</p>`
-        : ""
-      }
-                ${ad.company
-        ? `<p class="banner-company">${ad.company}</p>`
-        : ""
-      }
+                ${
+                  ad.instructor
+                    ? `<p class="banner-instructor">${ad.instructor}</p>`
+                    : ""
+                }
+                ${
+                  ad.company
+                    ? `<p class="banner-company">${ad.company}</p>`
+                    : ""
+                }
             </div>
-            <button class="banner-btn" onclick="handleBannerClick('${ad.title
-      }')">${ad.buttonText}</button>
+            <button class="banner-btn" onclick="handleBannerClick('${
+              ad.title
+            }')">${ad.buttonText}</button>
         `;
 
     return bannerDiv;
@@ -421,3 +426,90 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
+
+// 右側バナー広告ローテーション管理
+class SidebarBannerRotator {
+  constructor() {
+    this.banners = document.querySelectorAll(".rotating-banner");
+    this.currentBanner = 0;
+    this.rotationInterval = 3000; // 3秒間隔
+    this.rotationTimer = null;
+    this.init();
+  }
+
+  init() {
+    if (this.banners.length > 0) {
+      // 最初のバナーをアクティブにする
+      this.banners[0].classList.add("active");
+
+      // 自動ローテーション開始
+      this.startRotation();
+
+      // マウスホバー時に一時停止
+      const container = document.querySelector(".rotating-banner-container");
+      if (container) {
+        container.addEventListener("mouseenter", () => {
+          this.stopRotation();
+        });
+
+        container.addEventListener("mouseleave", () => {
+          this.startRotation();
+        });
+      }
+
+      // 各バナーにクリックイベントを追加
+      this.banners.forEach((banner, index) => {
+        banner.addEventListener("click", () => {
+          this.handleBannerClick(index);
+        });
+      });
+    }
+  }
+
+  goToBanner(index) {
+    // 現在のバナーを非アクティブにする
+    this.banners[this.currentBanner].classList.remove("active");
+
+    // 新しいバナーをアクティブにする
+    this.currentBanner = index;
+    this.banners[this.currentBanner].classList.add("active");
+  }
+
+  nextBanner() {
+    const nextIndex = (this.currentBanner + 1) % this.banners.length;
+    this.goToBanner(nextIndex);
+  }
+
+  startRotation() {
+    this.stopRotation(); // 既存のタイマーをクリア
+    this.rotationTimer = setInterval(() => {
+      this.nextBanner();
+    }, this.rotationInterval);
+  }
+
+  stopRotation() {
+    if (this.rotationTimer) {
+      clearInterval(this.rotationTimer);
+      this.rotationTimer = null;
+    }
+  }
+
+  handleBannerClick(index) {
+    // バナークリック時の処理
+    console.log(`Banner ${index + 1} clicked`);
+
+    // 実際の広告リンクに移動する処理をここに追加
+    // 例: window.open('https://example.com', '_blank');
+
+    // Google Analytics等のトラッキングコードもここに追加可能
+  }
+}
+
+// DOM読み込み完了後に初期化
+document.addEventListener("DOMContentLoaded", () => {
+  // 既存のバナースライダー初期化
+  new BannerSliderManager();
+
+  // 右側バナー広告ローテーター初期化
+  new SidebarBannerRotator();
+});
