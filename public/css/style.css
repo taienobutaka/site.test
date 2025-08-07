@@ -292,6 +292,7 @@ body {
   align-items: stretch;
   position: relative;
   height: 100%;
+  min-height: 500px;
 }
 
 /* 左側の縦書きテキスト */
@@ -429,20 +430,18 @@ body {
 
 /* 詳細ボタン */
 .details-button {
-  background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #ff6b35, #ffd700);
   color: white;
   border: none;
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 8px;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(253, 121, 168, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-end;
+  z-index: 10;
 }
 
 .details-button:hover {
@@ -962,49 +961,214 @@ body {
   line-height: 1.4;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .content-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .character-image {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .character-img {
-    width: 250px;
-    height: 320px;
-  }
-
-  .download-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-banners {
-    grid-template-columns: 1fr;
-  }
-
-  .download-buttons {
-    justify-content: center;
-  }
+/* バナー広告セクション */
+.banner-ad-section {
+  background: white;
+  border: 1px solid #000;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 40px;
+  position: relative;
 }
 
-@media (max-width: 480px) {
-  .character-img {
-    width: 200px;
-    height: 260px;
-  }
+.banner-slider {
+  position: relative;
+  overflow: hidden;
+}
 
-  .character-info h1 {
-    font-size: 2rem;
-  }
+.banner-slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
 
-  .main-content {
-    padding: 20px 15px;
-  }
+.banner-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.banner-ad-container {
+  display: flex;
+  gap: 0;
+  height: 100%;
+  min-height: 300px;
+  align-items: stretch;
+}
+
+.banner-ad-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  position: relative;
+  min-height: 300px;
+}
+
+.banner-ad-column:last-child {
+  border-right: none;
+}
+
+.banner-badge {
+  background: #ff69b4;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner-ad-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.banner-ad-description {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.banner-ad-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.banner-ad-button {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 140px;
+}
+
+.banner-ad-button:hover {
+  background: #e55a2b;
+}
+
+/* 画像版バナー広告用スタイル */
+.banner-ad-title[style*="background: #20B2AA"] {
+  background: #20B2AA !important;
+  color: white !important;
+  padding: 15px 25px !important;
+  border-radius: 8px !important;
+  margin-bottom: 15px !important;
+  font-size: 1.6rem !important;
+  font-weight: bold !important;
+}
+
+.banner-ad-column .banner-ad-description[style*="background: white"] {
+  background: white !important;
+  color: #333 !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  font-weight: bold !important;
+  margin-bottom: 20px !important;
+  display: inline-block !important;
+}
+
+.banner-ad-column .ad-label {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* 1カラムレイアウト用スタイル */
+.banner-ad-column.single-column {
+  flex: 0 0 50%;
+  width: 50%;
+  max-width: none;
+  margin: 0 auto;
+  border-right: none;
+  text-align: center;
+  position: relative;
+  padding: 20px 20px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 1カラムの時に大きい枠線を非表示 */
+.banner-ad-container.single-column-container {
+  border: none;
+}
+
+/* 1カラムの時にセクション全体の枠線を非表示 */
+.banner-slide:has(.single-column-container)+.banner-ad-section,
+.banner-slide:has(.single-column-container) .banner-ad-section {
+  border: none;
+}
+
+/* 1カラムのスライドがアクティブな時のセクション枠線を非表示 */
+.banner-slide.active:has(.single-column-container)~.banner-ad-section,
+.banner-slide.active:has(.single-column-container) .banner-ad-section {
+  border: none;
+}
+
+.banner-ad-column.single-column .banner-ad-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.banner-ad-column.single-column .banner-ad-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* 広告表示用スタイル */
+.ad-label {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: #666;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ad-label i {
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  border: 1px solid #666;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-size: 8px;
+  color: #666;
+  transform: rotate(45deg);
+  position: relative;
+}
+
+.ad-label i::before {
+  content: "i";
+  transform: rotate(-45deg);
+  font-style: italic;
+  font-weight: bold;
+  color: #666;
 }

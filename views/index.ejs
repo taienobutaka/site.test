@@ -115,97 +115,86 @@
     <!-- メインヒーローセクション（画像忠実再現） -->
     <section class="hero-banner">
       <div class="hero-container">
-        <!-- 左側の縦書きテキスト -->
-        <div class="left-vertical-text">
-          <div class="vertical-text-block">
-            <div class="vertical-line">プ</div>
-            <div class="vertical-line">ロ</div>
-            <div class="vertical-line">デ</div>
-            <div class="vertical-line">ュ</div>
-            <div class="vertical-line">ー</div>
-            <div class="vertical-line">サ</div>
-            <div class="vertical-line">ー</div>
-            <div class="vertical-line">は</div>
-          </div>
-          <div class="vertical-text-block">
-            <div class="vertical-line">ひ</div>
-            <div class="vertical-line">ど</div>
-            <div class="vertical-line">い</div>
-            <div class="vertical-line">。</div>
-          </div>
-          <div class="vertical-text-block">
-            <div class="vertical-line">鬼</div>
-            <div class="vertical-line">。</div>
-          </div>
-          <div class="vertical-text-block">
-            <div class="vertical-line">悪</div>
-            <div class="vertical-line">魔</div>
-            <div class="vertical-line">。</div>
-          </div>
-          <div class="vertical-text-block">
-            <div class="vertical-line">そ</div>
-            <div class="vertical-line">う</div>
-            <div class="vertical-line">い</div>
-            <div class="vertical-line">う</div>
-          </div>
-          <div class="vertical-text-block">
-            <div class="vertical-line">と</div>
-            <div class="vertical-line">こ</div>
-            <div class="vertical-line">ろ</div>
-            <div class="vertical-line">が</div>
-          </div>
-          <div class="vertical-text-block">
-            <div class="vertical-line">・</div>
-            <div class="vertical-line">・</div>
-            <div class="vertical-line">・</div>
-            <div class="vertical-line">・</div>
-            <div class="vertical-line">・</div>
-            <div class="vertical-line">・</div>
-          </div>
-          <div class="vertical-text-block">
-            <div class="vertical-line">す</div>
-            <div class="vertical-line">き</div>
-            <div class="vertical-line">。</div>
+        <!-- 詳しくはこちらボタンのみ -->
+        <button class="details-button"
+          style="background: linear-gradient(90deg, #ff6b35, #ffd700); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">
+          詳しくはこちら ≫
+        </button>
+      </div>
+    </section>
+
+    <!-- バナー広告セクション -->
+    <section class="banner-ad-section">
+      <div class="banner-slider">
+        <!-- バナー1: 大津市職員採用 -->
+        <div class="banner-slide active">
+          <div class="banner-ad-container">
+            <div class="banner-ad-column">
+              <div class="banner-badge">2025年度</div>
+              <h3 class="banner-ad-title">大津市職員採用</h3>
+              <p class="banner-ad-description">ただいま募集中!!</p>
+              <button class="banner-ad-button">詳しく見る</button>
+            </div>
+            <div class="banner-ad-column">
+              <h3 class="banner-ad-title">大津市職員/技術職</h3>
+              <p class="banner-ad-description">8月24日まで募集</p>
+              <p class="banner-ad-subtitle">大津市</p>
+              <button class="banner-ad-button">詳しく見る</button>
+              <div class="ad-label">広告 <i>i</i></div>
+            </div>
           </div>
         </div>
 
-        <!-- 中央のキャラクター画像エリア -->
-        <div class="character-display">
-          <div class="character-bg">
-            <!-- キャラクター画像の代わりの背景 -->
+        <!-- バナー2: 大津市職員採用（画像版） -->
+        <div class="banner-slide">
+          <div class="banner-ad-container single-column-container">
+            <div class="banner-ad-column single-column">
+              <div class="banner-badge">2025年度</div>
+              <h3 class="banner-ad-title"
+                style="background: #20B2AA; color: white; padding: 15px 25px; border-radius: 8px; margin-bottom: 15px;">
+                大津市職員採用</h3>
+              <div
+                style="background: white; color: #333; padding: 8px 16px; border-radius: 6px; font-weight: bold; margin-bottom: 20px;">
+                ただいま募集中!!</div>
+              <h3 class="banner-ad-title">大津市職員/技術職8月24日まで募集</h3>
+              <p class="banner-ad-subtitle">大津市</p>
+              <button class="banner-ad-button">詳しく見る</button>
+              <div class="ad-label">広告 <i>i</i></div>
+            </div>
           </div>
+        </div>
 
-          <!-- 右側の情報エリア -->
-          <div class="character-info-panel">
-            <!-- 学園アイドルマスターロゴエリア -->
-            <div class="idol-master-logo">
-              <div class="logo-text">学園アイドルマスター</div>
+        <!-- バナー3: Python/Laravel求人情報 -->
+        <div class="banner-slide">
+          <div class="banner-ad-container">
+            <div class="banner-ad-column">
+              <h3 class="banner-ad-title">Pythonの求人情報</h3>
+              <p class="banner-ad-description">Pythonの求人情報を豊富に掲載!</p>
+              <button class="banner-ad-button">詳しく見る</button>
             </div>
-
-            <!-- メインタイトル -->
-            <div class="main-title">
-              <h1 class="character-name">篠澤広</h1>
-              <p class="character-type">キャストドール</p>
+            <div class="banner-ad-column">
+              <h3 class="banner-ad-title">laravelの求人情報</h3>
+              <p class="banner-ad-description">laravelの求人情報を豊富に掲載!</p>
+              <button class="banner-ad-button">詳しく見る</button>
+              <div class="ad-label">広告 <i>i</i></div>
             </div>
+          </div>
+        </div>
 
-            <!-- 青緑色の帯 -->
-            <div class="announcement-banner">
-              <span>篠澤 広がついに</span>
-              <br>
-              <span>キャストドールで登場!!</span>
+        <!-- バナー4: プログラミング学習 -->
+        <div class="banner-slide">
+          <div class="banner-ad-container">
+            <div class="banner-ad-column">
+              <h3 class="banner-ad-title">プログラミング学習</h3>
+              <p class="banner-ad-description">Laravel×人材育成</p>
+              <button class="banner-ad-button">詳しく見る</button>
             </div>
-
-            <!-- 発売情報 -->
-            <div class="release-info">
-              <div class="release-date">2025年8月8日(金)</div>
-              <div class="release-status">受注販売開始！</div>
+            <div class="banner-ad-column">
+              <h3 class="banner-ad-title">Python学習</h3>
+              <p class="banner-ad-description">Python×人材育成</p>
+              <button class="banner-ad-button">詳しく見る</button>
+              <div class="ad-label">広告 <i>i</i></div>
             </div>
-
-            <!-- 詳細ボタン -->
-            <button class="details-button">
-              詳しくはこちら
-              <span class="arrow">»</span>
-            </button>
           </div>
         </div>
       </div>

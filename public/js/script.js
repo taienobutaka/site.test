@@ -1,3 +1,66 @@
+// バナー広告スライダー管理（自動切り替え）
+class BannerSliderManager {
+  constructor() {
+    this.slides = document.querySelectorAll('.banner-slide');
+    this.currentSlide = 0;
+    this.autoPlayInterval = 3000; // 3秒ごとに自動切り替え
+    this.autoPlayTimer = null;
+    this.init();
+  }
+
+  init() {
+    // 自動再生開始
+    this.startAutoPlay();
+
+    // マウスホバー時に自動再生を一時停止
+    const slider = document.querySelector('.banner-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', () => {
+        this.stopAutoPlay();
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        this.startAutoPlay();
+      });
+    }
+  }
+
+  goToSlide(index) {
+    // 現在のスライドを非アクティブにする
+    this.slides[this.currentSlide].classList.remove('active');
+
+    // 新しいスライドをアクティブにする
+    this.currentSlide = index;
+    this.slides[this.currentSlide].classList.add('active');
+
+    // 1カラムの時にセクション全体の枠線を非表示にする
+    const bannerSection = document.querySelector('.banner-ad-section');
+    if (this.slides[this.currentSlide].querySelector('.single-column-container')) {
+      bannerSection.style.border = 'none';
+    } else {
+      bannerSection.style.border = '1px solid #000';
+    }
+  }
+
+  nextSlide() {
+    const nextIndex = (this.currentSlide + 1) % this.slides.length;
+    this.goToSlide(nextIndex);
+  }
+
+  startAutoPlay() {
+    this.autoPlayTimer = setInterval(() => {
+      this.nextSlide();
+    }, this.autoPlayInterval);
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayTimer) {
+      clearInterval(this.autoPlayTimer);
+      this.autoPlayTimer = null;
+    }
+  }
+}
+
 // 画像に忠実なヘッダーナビゲーション管理
 class GigaFileHeaderManager {
   constructor() {
@@ -149,20 +212,17 @@ class DynamicBannerManager {
                 <h3>${ad.title}</h3>
                 <p class="banner-subtitle">${ad.subtitle}</p>
                 <p class="banner-description">${ad.description}</p>
-                ${
-                  ad.instructor
-                    ? `<p class="banner-instructor">${ad.instructor}</p>`
-                    : ""
-                }
-                ${
-                  ad.company
-                    ? `<p class="banner-company">${ad.company}</p>`
-                    : ""
-                }
+                ${ad.instructor
+        ? `<p class="banner-instructor">${ad.instructor}</p>`
+        : ""
+      }
+                ${ad.company
+        ? `<p class="banner-company">${ad.company}</p>`
+        : ""
+      }
             </div>
-            <button class="banner-btn" onclick="handleBannerClick('${
-              ad.title
-            }')">${ad.buttonText}</button>
+            <button class="banner-btn" onclick="handleBannerClick('${ad.title
+      }')">${ad.buttonText}</button>
         `;
 
     return bannerDiv;
@@ -336,6 +396,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 動的バナー管理の初期化
   const bannerManager = new DynamicBannerManager();
+
+  // バナー広告スライダー管理の初期化
+  const bannerSliderManager = new BannerSliderManager();
 
   console.log("ギガファイル便サイト初期化完了（画像忠実デザイン適用）");
 });
