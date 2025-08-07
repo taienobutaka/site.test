@@ -1,0 +1,11 @@
+
+> anime-site@1.0.0 prestart
+> echo "サーバー起動準備中..."
+
+サーバー起動準備中...
+
+> anime-site@1.0.0 start
+> node server.js
+
+サーバーが http://localhost:3000 で起動しました
+Terminated

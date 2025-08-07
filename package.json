@@ -1,0 +1,31 @@
+{
+  "name": "anime-site",
+  "version": "1.0.0",
+  "description": "アニメサイト - フルスタック実装",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js --watch views --watch public",
+    "test": "echo \"テストを実行中...\" && echo \"テストフレームワークを追加してください\"",
+    "build": "echo \"本番用ビルド実行中...\" && mkdir -p dist && cp -r public views server.js package.json dist/",
+    "clean": "rm -rf dist server.log server.pid public/js/*.min.js public/css/*.min.css",
+    "lint": "echo \"コード品質チェック - ESLintの設定が必要です\"",
+    "format": "echo \"コードフォーマット - Prettierの設定が必要です\"",
+    "prestart": "echo \"サーバー起動準備中...\"",
+    "postinstall": "echo \"インストール完了 - make dev でサーバー起動可能です\""
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "anime",
+    "website",
+    "fullstack"
+  ],
+  "author": "GitHub Copilot",
+  "license": "MIT"
+}

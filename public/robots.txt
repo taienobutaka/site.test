@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# 重要なページ
+Allow: /
+Allow: /api/banner-ads
+
+# 除外するページ（もしあれば）
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /server.log
+Disallow: *.log
+
+# サイトマップの場所
+Sitemap: http://localhost:3000/sitemap.xml
+
+# クローラーの待機時間（秒）
+Crawl-delay: 1
