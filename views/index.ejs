@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO: 基本メタタグ -->
+    <title>アニメ・エンターテイメントサイト | 篠澤広キャストドール公式</title>
+    <meta
+      name="description"
+      content="篠澤広キャストドールの公式サイト。2025年8月8日受注販売開始！最新アニメ・ゲーム情報、動画コンテンツ、ダウンロード素材を提供。プログラミング学習・ChatGPT活用講座も開催中。"
+    />
+    <meta
+      name="keywords"
+      content="篠澤広,キャストドール,アニメ,ゲーム,フィギュア,プログラミング学習,ChatGPT,オンライン講座,動画配信,エンターテイメント"
+    />
+    <meta name="author" content="アニメ・エンターテイメントサイト運営チーム" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="ja" />
 
-  <!-- SEO: 基本メタタグ -->
-  <title>アニメ・エンターテイメントサイト | 篠澤広キャストドール公式</title>
-  <meta name="description"
-    content="篠澤広キャストドールの公式サイト。2025年8月8日受注販売開始！最新アニメ・ゲーム情報、動画コンテンツ、ダウンロード素材を提供。プログラミング学習・ChatGPT活用講座も開催中。" />
-  <meta name="keywords" content="篠澤広,キャストドール,アニメ,ゲーム,フィギュア,プログラミング学習,ChatGPT,オンライン講座,動画配信,エンターテイメント" />
-  <meta name="author" content="アニメ・エンターテイメントサイト運営チーム" />
-  <meta name="robots" content="index, follow" />
-  <meta name="language" content="ja" />
+    <!-- SEO: Open Graph (SNS共有対応) -->
+    <meta
+      property="og:title"
+      content="アニメ・エンターテイメントサイト | 篠澤広キャストドール公式"
+    />
+    <meta
+      property="og:description"
+      content="篠澤広キャストドール公式サイト。最新アニメ・ゲーム情報、プログラミング学習講座を提供。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://localhost:3000" />
+    <meta
+      property="og:image"
+      content="http://localhost:3000/images/og-image.jpg"
+    />
+    <meta property="og:site_name" content="アニメ・エンターテイメントサイト" />
+    <meta property="og:locale" content="ja_JP" />
 
-  <!-- SEO: Open Graph (SNS共有対応) -->
-  <meta property="og:title" content="アニメ・エンターテイメントサイト | 篠澤広キャストドール公式" />
-  <meta property="og:description" content="篠澤広キャストドール公式サイト。最新アニメ・ゲーム情報、プログラミング学習講座を提供。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://localhost:3000" />
-  <meta property="og:image" content="http://localhost:3000/images/og-image.jpg" />
-  <meta property="og:site_name" content="アニメ・エンターテイメントサイト" />
-  <meta property="og:locale" content="ja_JP" />
+    <!-- SEO: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="アニメ・エンターテイメントサイト | 篠澤広キャストドール公式"
+    />
+    <meta
+      name="twitter:description"
+      content="篠澤広キャストドール公式サイト。最新アニメ・ゲーム情報、プログラミング学習講座を提供。"
+    />
+    <meta
+      name="twitter:image"
+      content="http://localhost:3000/images/twitter-image.jpg"
+    />
 
-  <!-- SEO: Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="アニメ・エンターテイメントサイト | 篠澤広キャストドール公式" />
-  <meta name="twitter:description" content="篠澤広キャストドール公式サイト。最新アニメ・ゲーム情報、プログラミング学習講座を提供。" />
-  <meta name="twitter:image" content="http://localhost:3000/images/twitter-image.jpg" />
-
-  <!-- SEO: 構造化データ (JSON-LD) -->
-  <script type="application/ld+json">
+    <!-- SEO: 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -49,212 +71,309 @@
       }
     </script>
 
-  <!-- SEO: カノニカルURL -->
-  <link rel="canonical" href="http://localhost:3000" />
+    <!-- SEO: カノニカルURL -->
+    <link rel="canonical" href="http://localhost:3000" />
 
-  <!-- PWA対応 -->
-  <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#ff6b6b" />
+    <!-- PWA対応 -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ff6b6b" />
 
-  <!-- ファビコン -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <!-- ファビコン -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
 
-  <link rel="stylesheet" href="/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
-</head>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-  <div class="container">
-    <!-- 画像に完全忠実なトップヘッダー -->
-    <header class="top-header">
-      <div class="header-container">
-        <!-- 左側の要素（ロゴエリア） -->
-        <div class="header-left">
-          <div class="logo-area">
-            <div class="logo-main-text">ギガファイル</div>
-            <div class="logo-top-text">
-              YouTubeで【GiFiレコーズラジオ】配信中!
+  <body>
+    <div class="container">
+      <!-- 画像に完全忠実なトップヘッダー -->
+      <header class="top-header">
+        <div class="header-container">
+          <!-- 左側の要素（ロゴエリア） -->
+          <div class="header-left">
+            <div class="logo-area">
+              <div class="logo-main-text">ギガファイル</div>
+              <div class="logo-top-text">
+                YouTubeで【GiFiレコーズラジオ】配信中!
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- 中央の「Xポスト」 -->
-        <div class="header-center">
-          <div class="x-post">Xポスト</div>
-        </div>
-
-        <!-- 右側のナビゲーションメニュー（画像通りの7項目） -->
-        <nav class="header-nav">
-          <ul class="nav-list">
-            <li class="nav-item"><a href="#" class="nav-link">ホーム</a></li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">お知らせ</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">ギガファイルとは</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">お問い合わせ</a>
-            </li>
-            <li class="nav-item"><a href="#" class="nav-link">アプリ</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">使い方</a></li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">速度比較</a>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- モバイル用ハンバーガーメニュー -->
-        <div class="mobile-menu-btn">
-          <span class="hamburger-icon">☰</span>
-        </div>
-      </div>
-    </header>
-
-    <!-- メインヒーローセクション（画像忠実再現） -->
-    <section class="hero-banner">
-      <div class="hero-container">
-        <!-- 詳しくはこちらボタンのみ -->
-        <button class="details-button"
-          style="background: linear-gradient(90deg, #ff6b35, #ffd700); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">
-          詳しくはこちら ≫
-        </button>
-      </div>
-    </section>
-
-    <!-- バナー広告セクション -->
-    <section class="banner-ad-section">
-      <div class="banner-slider">
-        <!-- バナー1: 大津市職員採用 -->
-        <div class="banner-slide active">
-          <div class="banner-ad-container">
-            <div class="banner-ad-column">
-              <div class="banner-badge">2025年度</div>
-              <h3 class="banner-ad-title">大津市職員採用</h3>
-              <p class="banner-ad-description">ただいま募集中!!</p>
-              <button class="banner-ad-button">詳しく見る</button>
-            </div>
-            <div class="banner-ad-column">
-              <h3 class="banner-ad-title">大津市職員/技術職</h3>
-              <p class="banner-ad-description">8月24日まで募集</p>
-              <p class="banner-ad-subtitle">大津市</p>
-              <button class="banner-ad-button">詳しく見る</button>
-              <div class="ad-label">広告 <i>i</i></div>
-            </div>
+          <!-- 中央の「Xポスト」 -->
+          <div class="header-center">
+            <div class="x-post">Xポスト</div>
           </div>
-        </div>
 
-        <!-- バナー2: 大津市職員採用（画像版） -->
-        <div class="banner-slide">
-          <div class="banner-ad-container single-column-container">
-            <div class="banner-ad-column single-column">
-              <div class="banner-badge">2025年度</div>
-              <h3 class="banner-ad-title"
-                style="background: #20B2AA; color: white; padding: 15px 25px; border-radius: 8px; margin-bottom: 15px;">
-                大津市職員採用</h3>
-              <div
-                style="background: white; color: #333; padding: 8px 16px; border-radius: 6px; font-weight: bold; margin-bottom: 20px;">
-                ただいま募集中!!</div>
-              <h3 class="banner-ad-title">大津市職員/技術職8月24日まで募集</h3>
-              <p class="banner-ad-subtitle">大津市</p>
-              <button class="banner-ad-button">詳しく見る</button>
-              <div class="ad-label">広告 <i>i</i></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- バナー3: Python/Laravel求人情報 -->
-        <div class="banner-slide">
-          <div class="banner-ad-container">
-            <div class="banner-ad-column">
-              <h3 class="banner-ad-title">Pythonの求人情報</h3>
-              <p class="banner-ad-description">Pythonの求人情報を豊富に掲載!</p>
-              <button class="banner-ad-button">詳しく見る</button>
-            </div>
-            <div class="banner-ad-column">
-              <h3 class="banner-ad-title">laravelの求人情報</h3>
-              <p class="banner-ad-description">laravelの求人情報を豊富に掲載!</p>
-              <button class="banner-ad-button">詳しく見る</button>
-              <div class="ad-label">広告 <i>i</i></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- バナー4: プログラミング学習 -->
-        <div class="banner-slide">
-          <div class="banner-ad-container">
-            <div class="banner-ad-column">
-              <h3 class="banner-ad-title">プログラミング学習</h3>
-              <p class="banner-ad-description">Laravel×人材育成</p>
-              <button class="banner-ad-button">詳しく見る</button>
-            </div>
-            <div class="banner-ad-column">
-              <h3 class="banner-ad-title">Python学習</h3>
-              <p class="banner-ad-description">Python×人材育成</p>
-              <button class="banner-ad-button">詳しく見る</button>
-              <div class="ad-label">広告 <i>i</i></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- メインコンテンツエリア -->
-    <main class="main-content">
-      <div class="content-grid">
-        <!-- 左カラム -->
-        <div class="left-column">
-          <!-- 動画セクション -->
-          <section class="video-section">
-            <h2 class="section-title">
-              【GiFレコーズラジオ】作業用BGM配信中
-            </h2>
-            <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="作業用BGM" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </section>
-
-          <!-- ニュースセクション -->
-          <section class="news-section">
-            <h2 class="section-title">新着情報</h2>
-            <ul class="news-list">
-              <li class="news-item">
-                <span class="news-date">2025/8/6</span>
-                <a href="#" class="news-link">新キャラクターの発表、来週に決定</a>
+          <!-- 右側のナビゲーションメニュー（画像通りの7項目） -->
+          <nav class="header-nav">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="#" class="nav-link">ホーム</a></li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">お知らせ</a>
               </li>
-              <li class="news-item">
-                <span class="news-date">2025/8/2</span>
-                <a href="#" class="news-link">2025年8月17日・23日：オンライン イベント
-                  メンテナンス実施のお知らせ</a>
+              <li class="nav-item">
+                <a href="#" class="nav-link">ギガファイルとは</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">お問い合わせ</a>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link">アプリ</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">使い方</a></li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">速度比較</a>
               </li>
             </ul>
-          </section>
+          </nav>
 
-          <!-- ダウンロードセクション -->
-          <section class="download-section">
-            <div class="download-card">
-              <h3>新着情報：原点にいるもの達、未来へと進む</h3>
-              <div class="download-content">
-                <div class="download-image">
-                  <div>プレビュー画像</div>
+          <!-- モバイル用ハンバーガーメニュー -->
+          <div class="mobile-menu-btn">
+            <span class="hamburger-icon">☰</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- メインヒーローセクション（画像忠実再現） -->
+      <section class="hero-banner">
+        <div class="hero-container">
+          <!-- 詳しくはこちらボタンのみ -->
+          <button
+            class="details-button"
+            style="
+              background: linear-gradient(90deg, #ff6b35, #ffd700);
+              color: white;
+              border: none;
+              padding: 15px 30px;
+              border-radius: 8px;
+              font-size: 1.1rem;
+              font-weight: bold;
+              cursor: pointer;
+            "
+          >
+            詳しくはこちら ≫
+          </button>
+        </div>
+      </section>
+
+      <!-- バナー広告セクション -->
+      <section class="banner-ad-section">
+        <div class="banner-slider">
+          <!-- バナー1: 大津市職員採用 -->
+          <div class="banner-slide active">
+            <div class="banner-ad-container">
+              <div class="banner-ad-column">
+                <div class="banner-badge">2025年度</div>
+                <h3 class="banner-ad-title">大津市職員採用</h3>
+                <p class="banner-ad-description">ただいま募集中!!</p>
+                <button class="banner-ad-button">詳しく見る</button>
+              </div>
+              <div class="banner-ad-column">
+                <h3 class="banner-ad-title">大津市職員/技術職</h3>
+                <p class="banner-ad-description">8月24日まで募集</p>
+                <p class="banner-ad-subtitle">大津市</p>
+                <button class="banner-ad-button">詳しく見る</button>
+                <div class="ad-label">広告 <i>i</i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- バナー2: 大津市職員採用（画像版） -->
+          <div class="banner-slide">
+            <div class="banner-ad-container single-column-container">
+              <div class="banner-ad-column single-column">
+                <div class="banner-badge">2025年度</div>
+                <h3
+                  class="banner-ad-title"
+                  style="
+                    background: #20b2aa;
+                    color: white;
+                    padding: 15px 25px;
+                    border-radius: 8px;
+                    margin-bottom: 15px;
+                  "
+                >
+                  大津市職員採用
+                </h3>
+                <div
+                  style="
+                    background: white;
+                    color: #333;
+                    padding: 8px 16px;
+                    border-radius: 6px;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                  "
+                >
+                  ただいま募集中!!
                 </div>
-                <div class="download-info">
-                  <h4>コーディングテスト.zip</h4>
-                  <p class="download-date">
-                    ダウンロード期間：2025年11月9日(日)
-                  </p>
-                  <p class="download-size">ファイルサイズ：1.1MB</p>
-                  <div class="download-buttons">
-                    <button class="btn btn-primary">ダウンロード</button>
-                    <button class="btn btn-secondary">アップロード</button>
-                    <button class="btn btn-tertiary">使い方</button>
+                <h3 class="banner-ad-title">
+                  大津市職員/技術職8月24日まで募集
+                </h3>
+                <p class="banner-ad-subtitle">大津市</p>
+                <button class="banner-ad-button">詳しく見る</button>
+                <div class="ad-label">広告 <i>i</i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- バナー3: Python/Laravel求人情報 -->
+          <div class="banner-slide">
+            <div class="banner-ad-container">
+              <div class="banner-ad-column">
+                <h3 class="banner-ad-title">Pythonの求人情報</h3>
+                <p class="banner-ad-description">
+                  Pythonの求人情報を豊富に掲載!
+                </p>
+                <button class="banner-ad-button">詳しく見る</button>
+              </div>
+              <div class="banner-ad-column">
+                <h3 class="banner-ad-title">laravelの求人情報</h3>
+                <p class="banner-ad-description">
+                  laravelの求人情報を豊富に掲載!
+                </p>
+                <button class="banner-ad-button">詳しく見る</button>
+                <div class="ad-label">広告 <i>i</i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- バナー4: プログラミング学習 -->
+          <div class="banner-slide">
+            <div class="banner-ad-container">
+              <div class="banner-ad-column">
+                <h3 class="banner-ad-title">プログラミング学習</h3>
+                <p class="banner-ad-description">Laravel×人材育成</p>
+                <button class="banner-ad-button">詳しく見る</button>
+              </div>
+              <div class="banner-ad-column">
+                <h3 class="banner-ad-title">Python学習</h3>
+                <p class="banner-ad-description">Python×人材育成</p>
+                <button class="banner-ad-button">詳しく見る</button>
+                <div class="ad-label">広告 <i>i</i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- メインコンテンツエリア -->
+      <main class="main-content">
+        <!-- 動画セクション（中央配置・縦長） -->
+        <section class="video-section">
+          <h2 class="section-title">【GiFレコーズラジオ】作業用BGM配信中</h2>
+
+          <!-- コメントセクション（上部） -->
+          <div class="comment-section">
+            <div class="comment-header">
+              <h3>コメント</h3>
+              <span class="comment-count">12件</span>
+            </div>
+            <div class="comment-list">
+              <div class="comment-item">
+                <div class="comment-avatar">A</div>
+                <div class="comment-content">
+                  <div class="comment-author">匿名ユーザー</div>
+                  <div class="comment-text">
+                    作業用BGMとして最高です！集中できます。
                   </div>
-                  <div class="qr-code">
-                    <div style="
+                  <div class="comment-time">5分前</div>
+                </div>
+              </div>
+              <div class="comment-item">
+                <div class="comment-avatar">B</div>
+                <div class="comment-content">
+                  <div class="comment-author">視聴者</div>
+                  <div class="comment-text">リラックスできる音楽ですね。</div>
+                  <div class="comment-time">15分前</div>
+                </div>
+              </div>
+              <div class="comment-item">
+                <div class="comment-avatar">C</div>
+                <div class="comment-content">
+                  <div class="comment-author">リスナー</div>
+                  <div class="comment-text">
+                    いつも聞いています！ありがとうございます。
+                  </div>
+                  <div class="comment-time">30分前</div>
+                </div>
+              </div>
+            </div>
+            <div class="comment-input-area">
+              <input
+                type="text"
+                placeholder="コメントを入力..."
+                class="comment-input"
+              />
+              <button class="comment-submit">投稿</button>
+            </div>
+          </div>
+
+          <!-- 動画コンテナ（下部） -->
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="作業用BGM"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </section>
+
+        <div class="content-grid">
+          <!-- 左カラム -->
+          <div class="left-column">
+            <!-- ニュースセクション -->
+            <section class="news-section">
+              <h2 class="section-title">新着情報</h2>
+              <ul class="news-list">
+                <li class="news-item">
+                  <span class="news-date">2025/8/6</span>
+                  <a href="#" class="news-link"
+                    >新キャラクターの発表、来週に決定</a
+                  >
+                </li>
+                <li class="news-item">
+                  <span class="news-date">2025/8/2</span>
+                  <a href="#" class="news-link"
+                    >2025年8月17日・23日：オンライン イベント
+                    メンテナンス実施のお知らせ</a
+                  >
+                </li>
+              </ul>
+            </section>
+
+            <!-- ダウンロードセクション -->
+            <section class="download-section">
+              <div class="download-card">
+                <h3>新着情報：原点にいるもの達、未来へと進む</h3>
+                <div class="download-content">
+                  <div class="download-image">
+                    <div>プレビュー画像</div>
+                  </div>
+                  <div class="download-info">
+                    <h4>コーディングテスト.zip</h4>
+                    <p class="download-date">
+                      ダウンロード期間：2025年11月9日(日)
+                    </p>
+                    <p class="download-size">ファイルサイズ：1.1MB</p>
+                    <div class="download-buttons">
+                      <button class="btn btn-primary">ダウンロード</button>
+                      <button class="btn btn-secondary">アップロード</button>
+                      <button class="btn btn-tertiary">使い方</button>
+                    </div>
+                    <div class="qr-code">
+                      <div
+                        style="
                           width: 60px;
                           height: 60px;
                           background: #333;
@@ -264,34 +383,36 @@
                           justify-content: center;
                           color: white;
                           font-size: 0.8rem;
-                        ">
-                      QR
+                        "
+                      >
+                        QR
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
-        </div>
-
-        <!-- 右カラム -->
-        <div class="right-column">
-          <!-- 広告バナー（Avvy） -->
-          <div class="ad-banner avvy-banner">
-            <!-- Avvy banner content handled by CSS -->
+            </section>
           </div>
 
-          <!-- プログラミング学習バナー -->
-          <div class="ad-banner programming-banner">
-            <div class="banner-content">
-              <h3>プログラミング学習</h3>
-              <p>Laravel×人材育成</p>
-              <p>大学生×プログラミング教育×転職×人材育成</p>
-              <p>システム×プログラミング教育×転職×副業×在宅ワーク</p>
-              <p>Python×人材育成</p>
-              <p>大学生×プログラミング教育×転職×人材育成！</p>
-              <div class="banner-logo">
-                <div style="
+          <!-- 右カラム -->
+          <div class="right-column">
+            <!-- 広告バナー（Avvy） -->
+            <div class="ad-banner avvy-banner">
+              <!-- Avvy banner content handled by CSS -->
+            </div>
+
+            <!-- プログラミング学習バナー -->
+            <div class="ad-banner programming-banner">
+              <div class="banner-content">
+                <h3>プログラミング学習</h3>
+                <p>Laravel×人材育成</p>
+                <p>大学生×プログラミング教育×転職×人材育成</p>
+                <p>システム×プログラミング教育×転職×副業×在宅ワーク</p>
+                <p>Python×人材育成</p>
+                <p>大学生×プログラミング教育×転職×人材育成！</p>
+                <div class="banner-logo">
+                  <div
+                    style="
                       height: 40px;
                       width: 120px;
                       background: rgba(255, 255, 255, 0.3);
@@ -302,57 +423,44 @@
                       color: white;
                       font-weight: bold;
                       font-size: 0.8rem;
-                    ">
-                  ポテパンキャンプ
+                    "
+                  >
+                    ポテパンキャンプ
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- 企業バナー -->
-          <div class="ad-banner company-banner">
-            <!-- Green banner content handled by CSS -->
+            <!-- 企業バナー -->
+            <div class="ad-banner company-banner">
+              <!-- Green banner content handled by CSS -->
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
 
-    <!-- フッターバナー広告（動的） -->
-    <footer class="footer">
-      <div class="footer-banners" id="dynamic-banners">
-        <% bannerAds.forEach(function(ad) { %>
+      <!-- フッターバナー広告（動的） -->
+      <footer class="footer">
+        <div class="footer-banners" id="dynamic-banners">
+          <% bannerAds.forEach(function(ad) { %>
           <div class="banner-ad" style="background-color: <%= ad.bgColor %>">
             <div class="banner-text">
-              <h3>
-                <%= ad.title %>
-              </h3>
-              <p class="banner-subtitle">
-                <%= ad.subtitle %>
-              </p>
-              <p class="banner-description">
-                <%= ad.description %>
-              </p>
+              <h3><%= ad.title %></h3>
+              <p class="banner-subtitle"><%= ad.subtitle %></p>
+              <p class="banner-description"><%= ad.description %></p>
               <% if (ad.instructor) { %>
-                <p class="banner-instructor">
-                  <%= ad.instructor %>
-                </p>
-                <% } %>
-                  <% if (ad.company) { %>
-                    <p class="banner-company">
-                      <%= ad.company %>
-                    </p>
-                    <% } %>
+              <p class="banner-instructor"><%= ad.instructor %></p>
+              <% } %> <% if (ad.company) { %>
+              <p class="banner-company"><%= ad.company %></p>
+              <% } %>
             </div>
-            <button class="banner-btn">
-              <%= ad.buttonText %>
-            </button>
+            <button class="banner-btn"><%= ad.buttonText %></button>
           </div>
           <% }); %>
-      </div>
-    </footer>
-  </div>
+        </div>
+      </footer>
+    </div>
 
-  <script src="/js/script.js"></script>
-</body>
-
+    <script src="/js/script.js"></script>
+  </body>
 </html>

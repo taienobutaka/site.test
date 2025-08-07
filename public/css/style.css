@@ -303,7 +303,11 @@ body {
   padding: 20px 40px 20px 20px;
   writing-mode: horizontal-tb;
   flex-shrink: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.2)
+  );
   min-height: 100%;
   align-items: flex-start;
 }
@@ -570,6 +574,146 @@ body {
 /* Video Section */
 .video-section {
   margin-bottom: 40px;
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  padding: 0 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.video-section .section-title {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  padding: 20px 0 15px 0;
+  border-bottom: 3px solid #ff6b35;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+/* コメントセクション */
+.comment-section {
+  background: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.comment-header h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.comment-count {
+  background: #6c757d;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+.comment-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.comment-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  background: #007bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.comment-text {
+  color: #495057;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.comment-time {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.comment-input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.comment-input:focus {
+  border-color: #007bff;
+}
+
+.comment-submit {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.comment-submit:hover {
+  background: #0056b3;
 }
 
 .video-container {
@@ -577,11 +721,51 @@ body {
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
-  /* 16:9 aspect ratio */
+  /* 16:9 aspect ratio for video */
   background: #000;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .video-section {
+    max-width: 350px;
+    padding: 0 15px;
+  }
+
+  .video-section .section-title {
+    font-size: 1.3rem;
+    padding: 15px 0 10px 0;
+  }
+
+  .comment-section {
+    padding: 15px;
+  }
+
+  .comment-list {
+    max-height: 150px;
+  }
+
+  .comment-item {
+    padding: 8px;
+  }
+
+  .comment-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .comment-input-area {
+    flex-direction: column;
+  }
+
+  .comment-submit {
+    align-self: flex-end;
+    width: 80px;
+  }
 }
 
 .video-container iframe {
@@ -880,9 +1064,11 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
   pointer-events: none;
 }
 
@@ -1061,7 +1247,7 @@ body {
 
 /* 画像版バナー広告用スタイル */
 .banner-ad-title[style*="background: #20B2AA"] {
-  background: #20B2AA !important;
+  background: #20b2aa !important;
   color: white !important;
   padding: 15px 25px !important;
   border-radius: 8px !important;
@@ -1114,13 +1300,13 @@ body {
 }
 
 /* 1カラムの時にセクション全体の枠線を非表示 */
-.banner-slide:has(.single-column-container)+.banner-ad-section,
+.banner-slide:has(.single-column-container) + .banner-ad-section,
 .banner-slide:has(.single-column-container) .banner-ad-section {
   border: none;
 }
 
 /* 1カラムのスライドがアクティブな時のセクション枠線を非表示 */
-.banner-slide.active:has(.single-column-container)~.banner-ad-section,
+.banner-slide.active:has(.single-column-container) ~ .banner-ad-section,
 .banner-slide.active:has(.single-column-container) .banner-ad-section {
   border: none;
 }
