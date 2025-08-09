@@ -631,13 +631,13 @@ body {
   left: 0;
   width: 100%;
   background: white;
-  border-radius: 12px;
+  border-radius: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
   opacity: 0;
   transform: translateX(20px);
   transition: all 0.5s ease-in-out;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #000;
   cursor: pointer;
 }
 
@@ -1496,6 +1496,13 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+/* video-right-ads内の広告マークは右上に表示 */
+.rotating-banner .ad-label {
+  top: 10px;
+  bottom: auto;
+  right: 10px;
 }
 
 .ad-label i {
