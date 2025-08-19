@@ -62,167 +62,6 @@
         "potentialAction": {
           "@type": "SearchAction",
           "target": "http://localhost:3000/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "アニメ・エンターテイメントサイト運営チーム"
-        }
-      }
-    </script>
-
-    <!-- SEO: カノニカルURL -->
-    <link rel="canonical" href="http://localhost:3000" />
-
-    <!-- PWA対応 -->
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#ff6b6b" />
-
-    <!-- ファビコン -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/apple-touch-icon.png"
-    />
-
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body>
-    <!-- サイトアクセス時の全画面バナー広告 -->
-    <div
-      id="full-banner-ad"
-      style="
-        position: fixed;
-        z-index: 9999;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.85);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      "
-    >
-      <div
-        style="
-          background: #fff;
-          padding: 32px 24px 24px 24px;
-          border-radius: 12px;
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-          max-width: 90vw;
-          max-height: 80vh;
-          text-align: center;
-          position: relative;
-        "
-      >
-        <img
-          src="/images/og-image.jpg"
-          alt="バナー広告"
-          style="
-            max-width: 320px;
-            width: 80vw;
-            height: auto;
-            margin-bottom: 16px;
-          "
-        />
-        <h2 style="font-size: 1.5rem; margin-bottom: 8px">
-          【PR】今だけ限定！アニメ・エンタメ最新情報
-        </h2>
-        <p style="margin-bottom: 16px">
-          2025年8月8日受注販売開始！<br />最新アニメ・ゲーム情報や特典をチェック！
-        </p>
-        <button
-          id="close-banner-btn"
-          style="
-            background: #ff6b6b;
-            color: #fff;
-            border: none;
-            padding: 12px 32px;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            cursor: pointer;
-          "
-        >
-          閉じる
-        </button>
-      </div>
-    </div>
-    <div class="container" id="site-main-container" style="display: none">
-      <script>
-        // サイトアクセス時に全画面バナーを表示し、閉じると本体を表示
-        document.addEventListener("DOMContentLoaded", function () {
-          var banner = document.getElementById("full-banner-ad");
-          var main = document.getElementById("site-main-container");
-          var closeBtn = document.getElementById("close-banner-btn");
-          if (banner && main && closeBtn) {
-            closeBtn.addEventListener("click", function () {
-              banner.style.display = "none";
-              main.style.display = "";
-            });
-          }
-        });
-      </script>
-      <!-- 画像に完全忠実なトップヘッダー -->
-      <header class="top-header">
-        <div class="header-container">
-          <!-- 左側の要素（ロゴエリア） -->
-          <div class="header-left">
-            <div class="logo-area">
-              <div class="logo-main-text">ギガファイル</div>
-              <div class="logo-top-text">
-                YouTubeで【GiFiレコーズラジオ】配信中!
-              </div>
-            </div>
-          </div>
-
-          <!-- 中央の「Xポスト」 -->
-          <div class="header-center">
-            <div class="x-post">Xポスト</div>
-          </div>
-
-          <!-- 右側のナビゲーションメニュー（画像通りの7項目） -->
-          <nav class="header-nav">
-            <ul class="nav-list">
-              <li class="nav-item"><a href="#" class="nav-link">ホーム</a></li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">お知らせ</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">ギガファイルとは</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">お問い合わせ</a>
-              </li>
-              <li class="nav-item"><a href="#" class="nav-link">アプリ</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">使い方</a></li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">速度比較</a>
-              </li>
-            </ul>
-          </nav>
-
-          <!-- モバイル用ハンバーガーメニュー -->
-          <div class="mobile-menu-btn">
-            <span class="hamburger-icon">☰</span>
-          </div>
-        </div>
-      </header>
-
-      <!-- メインヒーローセクション（画像忠実再現） -->
-      <section class="hero-banner">
-        <div class="hero-container">
-          <!-- 詳しくはこちらボタンのみ -->
-          <button
-            class="details-button"
-            style="
               background: linear-gradient(90deg, #ff6b35, #ffd700);
               color: white;
               border: none;
@@ -346,7 +185,66 @@
         <!-- 動画セクションとバナー広告エリア（3カラムレイアウト対応） -->
         <div class="video-ad-container">
           <!-- 左側バナー広告エリア（将来追加予定） -->
+          <aside
+            class="video-left-ads"
+            style="position: relative; min-width: 260px"
+          >
+            <div
+              id="slidein-banner"
+              style="
+                position: absolute;
+                top: 40px;
+                left: 0;
+                transform: translateX(-120%);
+                transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+                background: #fffbe6;
+                border: 2px solid #ffb300;
+                border-radius: 10px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+                padding: 24px 18px 18px 18px;
+                min-width: 220px;
+                max-width: 260px;
+                z-index: 10;
+                opacity: 0.98;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+              "
+            >
+              <div
+                style="
+                  font-size: 1.1rem;
+                  font-weight: bold;
+                  color: #ff6b35;
+                  margin-bottom: 8px;
+                "
+              >
+                【PR】今だけ限定！
+              </div>
+              <div
+                style="font-size: 1.3rem; font-weight: bold; margin-bottom: 6px"
+              >
+                アニメ・エンタメ最新情報
+              </div>
+              <div style="font-size: 0.95rem; margin-bottom: 10px">
+                2025年8月8日受注販売開始！<br />最新アニメ・ゲーム情報や特典をチェック！
+              </div>
+              <a
+                href="#"
+                style="
+                  display: inline-block;
+                  background: #ffb300;
+                  color: #fff;
+                  padding: 8px 18px;
+                  border-radius: 5px;
+                  text-decoration: none;
+                  font-weight: bold;
+                "
+                >詳しく見る</a
+              >
+=======
           <aside class="video-left-ads">
+ 
             <div
               id="slidein-banner"
               style="
@@ -397,6 +295,29 @@
                 "
                 >詳しく見る</a
               >
+ 
+            <div id="slidein-banner" style="
+              position: absolute;
+              top: 60px;
+              left: 0;
+              transform: translateX(-120%);
+              transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+              background: #fffbe6;
+              border: 2px solid #ffb300;
+              border-radius: 10px;
+              box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+              padding: 24px 18px 18px 18px;
+              min-width: 220px;
+              max-width: 260px;
+              z-index: 10;
+              opacity: 0.98;
+            ">
+              <div style="font-size:1.1rem;font-weight:bold;color:#ff6b35;margin-bottom:8px;">【PR】今だけ限定！</div>
+              <div style="font-size:1.3rem;font-weight:bold;margin-bottom:6px;">アニメ・エンタメ最新情報</div>
+              <div style="font-size:0.95rem;margin-bottom:10px;">2025年8月8日受注販売開始！<br>最新アニメ・ゲーム情報や特典をチェック！</div>
+              <a href="#" style="display:inline-block;background:#ffb300;color:#fff;padding:8px 18px;border-radius:5px;text-decoration:none;font-weight:bold;">詳しく見る</a>
+ 
+ 
             </div>
           </aside>
 
@@ -667,11 +588,24 @@
 
     <script src="/js/script.js"></script>
     <script>
+<<<<<<< HEAD
+      // サイトアクセス時に全画面バナーを表示し、閉じると本体を表示 & スクロールで左バナーをスライドイン
+      document.addEventListener("DOMContentLoaded", function () {
+        // 全画面バナー制御
+        var fullBanner = document.getElementById("full-banner-ad");
+        var main = document.getElementById("site-main-container");
+        var closeBtn = document.getElementById("close-banner-btn");
+        if (fullBanner && main && closeBtn) {
+          closeBtn.addEventListener("click", function () {
+            fullBanner.style.display = "none";
+            main.style.display = "";
+=======
       // スクロールで左バナーをスライドイン
       document.addEventListener("DOMContentLoaded", function () {
         var banner = document.getElementById("slidein-banner");
         if (!banner) return;
         var shown = false;
+<<<<<<< HEAD
         var observer = new IntersectionObserver(
           function (entries) {
             entries.forEach(function (entry) {
@@ -683,10 +617,43 @@
           },
           { threshold: 0.3 }
         );
+=======
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting && !shown) {
+              banner.style.transform = 'translateX(0)';
+              shown = true;
+            }
+>>>>>>> feature/slidein-left-banner
+          });
+        }, { threshold: 0.3 });
+>>>>>>> origin/main
         // 動画セクションを監視
         var videoSection = document.querySelector(".video-section");
         if (videoSection) {
           observer.observe(videoSection);
+        }
+
+        // スクロールで左バナーをスライドイン（動画セクションの左側で表示）
+        var slideinBanner = document.getElementById("slidein-banner");
+        if (slideinBanner) {
+          var shown = false;
+          var observer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting && !shown) {
+                  slideinBanner.style.transform = "translateX(0)";
+                  shown = true;
+                }
+              });
+            },
+            { threshold: 0.3 }
+          );
+          // 動画セクションを監視
+          var videoSection = document.querySelector(".video-section");
+          if (videoSection) {
+            observer.observe(videoSection);
+          }
         }
       });
     </script>
