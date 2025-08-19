@@ -62,7 +62,7 @@ PWA, Makefile, サーバーサイドレンダリング, API 連携
 ## プロジェクト構成
 
 ```
-/home/taie/test/site/
+site.test/
 ├── Makefile
 ├── dev-script.sh
 ├── server.js
@@ -165,64 +165,6 @@ make logs
 make clean
 ```
 
-### ⚠️ トラブルシューティング
-
-#### ポート 3000 が使用中の場合
-
-```bash
-# 使用中プロセス確認
-lsof -i :3000
-
-# プロセス終了
-make stop
-# または
-pkill -f "node server.js"
-```
-
-#### 依存関係の問題
-
-```bash
-# 完全リセット
-make clean-all
-make setup
-```
-
-#### サーバーファイルの問題
-
-```bash
-# サーバーファイルの構文チェック
-node -c server.js
-
-# 手動でサーバー起動（エラー確認）
-node server.js
-
-# ログ確認
-make logs
-cat server.log
-```
-
-#### SEO 機能が動作しない場合
-
-```bash
-# サイトマップ確認
-curl http://localhost:3000/sitemap.xml
-
-# robots.txt確認
-curl http://localhost:3000/robots.txt
-
-# サーバー再起動
-make restart
-```
-
-#### 権限エラー
-
-```bash
-# Node.jsのグローバルインストール先を確認
-npm config get prefix
-
-# 必要に応じてnpmの権限設定を変更
-```
-
 ### 🛠️ 従来の npm コマンド
 
 ### 1. 依存関係のインストール
@@ -308,7 +250,6 @@ npm start
 
 テスト環境では実際の画像の代わりに CSS 生成された代用要素を使用：
 
-- キャラクター画像 → グラデーション背景 + テキスト
 - 広告バナー → CSS 生成デザイン
 - ロゴ → テキストベース表示
 - QR コード → CSS 代用ボックス
@@ -418,25 +359,6 @@ curl http://localhost:3000 | grep -A 20 'application/ld+json'
 3. **SSL 証明書**: HTTPS 対応
 4. **CDN**: 静的アセット配信最適化
 5. **監視**: ログ・メトリクス設定
-
-## 📁 プロジェクト構造
-
-```
-site.test
-├── Makefile                   # 効率的な開発フロー管理
-├── dev-script.sh             # 高速開発スクリプト
-├── server.js                # Express サーバー
-├── package.json             # 依存関係管理（拡張済み）
-├── views/
-│   └── index.ejs           # メインテンプレート
-├── public/
-│   ├── css/
-│   │   └── style.css       # メインスタイル
-│   ├── js/
-│   │   └── script.js       # クライアントサイドJS
-│   └── images/             # 画像アセット（代用対応）
-└── setup-port-forwarding.sh  # ポート80設定スクリプト
-```
 
 ## ⚡ 高速開発フロー
 
