@@ -7,84 +7,34 @@
 - 動的バナー広告（API 連携・スライドイン・自動ローテーション）
 - SEO 最適化（メタタグ/OGP/構造化データ/カノニカル/robots/sitemap）
 - PWA 対応・パフォーマンス最適化（遅延読込・プリロード・キャッシュ）
-- Makefile/スクリプトによる効率的な開発・運用
 
----
+## 📦 クローンからの構築・起動方法
 
-## 技術スタック
+1. リポジトリをクローン
 
-**フロントエンド**:  
-HTML5, CSS3 (Grid/Flexbox), Vanilla JS (ES6+), EJS, レスポンシブ, アニメーション
-
-**バックエンド**:  
-Node.js, Express.js, RESTful API
-
-**その他**:  
-PWA, Makefile, サーバーサイドレンダリング, API 連携
-
----
-
-## 主な機能
-
-- トップナビゲーション（モバイル対応）
-- 動的バナー広告（API 取得・自動切替・スライドイン）
-- 全画面バナー広告（初回アクセス時）
-- 遅延画像読み込み・スムーズスクロール
-- PWA 対応・オフライン準備
-
----
-
-## SEO 対策
-
-- タイトル・ディスクリプション・キーワード・OGP・TwitterCard
-- 構造化データ（JSON-LD/Schema.org）
-- カノニカル URL・robots.txt・sitemap.xml
-- セマンティック HTML・アクセシビリティ考慮
-
----
-
-## デザイン・パフォーマンス
-
-- グラデーション・アニメーション・ホバー効果
-- Google Fonts 最適化・CSS/JS 圧縮
-- 遅延画像読込・プリロード・キャッシュ
-
----
-
-## 開発・運用
-
-- Makefile/スクリプトでセットアップ・起動・ビルド・デプロイ自動化
-- API/サーバー/クライアント一体型構成
-- ローカル・本番どちらも即時起動
-
----
-
-## プロジェクト構成
-
-```
-site.test/
-├── Makefile
-├── dev-script.sh
-├── server.js
-├── package.json
-├── views/
-│   └── index.ejs
-├── public/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
-│   └── images/
-└── setup-port-forwarding.sh
+```bash
+git clone git@github.com:taienobutaka/site.test.git
+cd site.test
 ```
 
----
+2. セットアップ（依存関係インストール）
 
-## 📦 インストール & 実行
+```bash
+make setup
+```
 
-### 🎯 ゼロから始める完全構築手順
+3. サーバー起動
 
-#### ステップ 1: 環境準備
+```bash
+make dev      # 開発モード（ホットリロード対応）
+# または
+make start    # 本番モード
+```
+
+4. サイトへアクセス
+
+- http://localhost:3000
+- `make open` で自動オープンも可能
 
 ```bash
 # Node.js 18以上がインストールされていることを確認
