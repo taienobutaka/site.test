@@ -1,37 +1,84 @@
 # アニメ・エンターテイメントサイト
 
-フルスタックエンジニアによる画像参考デザイン実装
+## ポートフォリオ向けアピールポイント
 
-## 🚀 特徴
+- モダンな UI/UX・レスポンシブデザイン（スマホ/PC 両対応）
+- Node.js + Express + EJS によるフルスタック SPA
+- 動的バナー広告（API 連携・スライドイン・自動ローテーション）
+- SEO 最適化（メタタグ/OGP/構造化データ/カノニカル/robots/sitemap）
+- PWA 対応・パフォーマンス最適化（遅延読込・プリロード・キャッシュ）
+- Makefile/スクリプトによる効率的な開発・運用
 
-- **レスポンシブデザイン**: モバイルファーストなデザイン
-- **動的バナー広告**: API ベースで 5 秒ごとに更新される広告
-- **モダンな UI/UX**: グラデーション、アニメーション効果
-- **フルスタック実装**: Node.js + Express + EJS
-- **画像代用対応**: テスト環境では画像を CSS 代用
+---
 
-## 🛠️ 技術スタック
+## 技術スタック
 
-### フロントエンド
+**フロントエンド**:  
+HTML5, CSS3 (Grid/Flexbox), Vanilla JS (ES6+), EJS, レスポンシブ, アニメーション
 
-- HTML5 + CSS3 (Grid Layout, Flexbox)
-- Vanilla JavaScript (ES6+)
-- EJS テンプレートエンジン
-- レスポンシブデザイン
+**バックエンド**:  
+Node.js, Express.js, RESTful API
 
-### バックエンド
+**その他**:  
+PWA, Makefile, サーバーサイドレンダリング, API 連携
 
-- Node.js
-- Express.js
-- RESTful API
+---
 
-### 機能
+## 主な機能
 
-- 動的コンテンツ管理
-- バナー広告ローテーション
-- 遅延画像読み込み
-- スムーズスクロール
-- PWA 対応準備
+- トップナビゲーション（モバイル対応）
+- 動的バナー広告（API 取得・自動切替・スライドイン）
+- 全画面バナー広告（初回アクセス時）
+- 遅延画像読み込み・スムーズスクロール
+- PWA 対応・オフライン準備
+
+---
+
+## SEO 対策
+
+- タイトル・ディスクリプション・キーワード・OGP・TwitterCard
+- 構造化データ（JSON-LD/Schema.org）
+- カノニカル URL・robots.txt・sitemap.xml
+- セマンティック HTML・アクセシビリティ考慮
+
+---
+
+## デザイン・パフォーマンス
+
+- グラデーション・アニメーション・ホバー効果
+- Google Fonts 最適化・CSS/JS 圧縮
+- 遅延画像読込・プリロード・キャッシュ
+
+---
+
+## 開発・運用
+
+- Makefile/スクリプトでセットアップ・起動・ビルド・デプロイ自動化
+- API/サーバー/クライアント一体型構成
+- ローカル・本番どちらも即時起動
+
+---
+
+## プロジェクト構成
+
+```
+/home/taie/test/site/
+├── Makefile
+├── dev-script.sh
+├── server.js
+├── package.json
+├── views/
+│   └── index.ejs
+├── public/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── images/
+└── setup-port-forwarding.sh
+```
+
+---
 
 ## 📦 インストール & 実行
 
@@ -51,9 +98,6 @@ npm --version   # 確認
 #### ステップ 2: プロジェクト取得・セットアップ
 
 ```bash
-# プロジェクトディレクトリに移動
-cd /home/taie/test/site
-
 # 環境確認と依存関係インストール（推奨）
 make setup
 
@@ -378,7 +422,7 @@ curl http://localhost:3000 | grep -A 20 'application/ld+json'
 ## 📁 プロジェクト構造
 
 ```
-/home/taie/test/site/
+site.test
 ├── Makefile                   # 効率的な開発フロー管理
 ├── dev-script.sh             # 高速開発スクリプト
 ├── server.js                # Express サーバー
@@ -435,14 +479,29 @@ make status
 make restart
 ```
 
-## 👨‍💻 開発情報
-
-**開発者**: GitHub Copilot (フルスタックエンジニア)  
-**開発日**: 2025 年 8 月 6 日  
-**バージョン**: 1.0.0  
-**ライセンス**: MIT
-
 ---
 
-**📞 サポート**: 技術的な質問やカスタマイズ要望があればお気軽にお声かけください。
-# -
+## クローン＆構築手順（Makefile 推奨）
+
+1. リポジトリをクローン
+
+```bash
+git clone git@github.com:taienobutaka/site.test.git
+cd site.test
+```
+
+2. Makefile でセットアップ＆起動
+
+```bash
+make setup   # 依存関係インストール・初期化
+make dev     # 開発モードで起動（ホットリロード対応）
+# または
+make start   # 本番モードで起動
+```
+
+3. ブラウザでアクセス
+
+- http://localhost:3000
+- `make open` で自動オープンも可能
+
+---
