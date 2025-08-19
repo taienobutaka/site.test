@@ -586,8 +586,8 @@ body {
 .video-left-ads {
   width: 300px;
   min-height: 600px;
-  /* 将来的にここに左側バナー広告を配置 */
-  /* 現在は空のスペースとして予約 */
+  position: relative;
+  /* 左側バナー広告を配置 */
 }
 
 /* Video Section（固定幅で中央配置） */

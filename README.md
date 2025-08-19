@@ -1,43 +1,40 @@
 # アニメ・エンターテイメントサイト
 
-フルスタックエンジニアによる画像参考デザイン実装
+## ポートフォリオ向けアピールポイント
 
-## 🚀 特徴
+- モダンな UI/UX・レスポンシブデザイン（スマホ/PC 両対応）
+- Node.js + Express + EJS によるフルスタック SPA
+- 動的バナー広告（API 連携・スライドイン・自動ローテーション）
+- SEO 最適化（メタタグ/OGP/構造化データ/カノニカル/robots/sitemap）
+- PWA 対応・パフォーマンス最適化（遅延読込・プリロード・キャッシュ）
 
-- **レスポンシブデザイン**: モバイルファーストなデザイン
-- **動的バナー広告**: API ベースで 5 秒ごとに更新される広告
-- **モダンな UI/UX**: グラデーション、アニメーション効果
-- **フルスタック実装**: Node.js + Express + EJS
-- **画像代用対応**: テスト環境では画像を CSS 代用
+## 📦 クローンからの構築・起動方法
 
-## 🛠️ 技術スタック
+1. リポジトリをクローン
 
-### フロントエンド
+```bash
+git clone git@github.com:taienobutaka/site.test.git
+cd site.test
+```
 
-- HTML5 + CSS3 (Grid Layout, Flexbox)
-- Vanilla JavaScript (ES6+)
-- EJS テンプレートエンジン
-- レスポンシブデザイン
+2. セットアップ（依存関係インストール）
 
-### バックエンド
+```bash
+make setup
+```
 
-- Node.js
-- Express.js
-- RESTful API
+3. サーバー起動
 
-### 機能
+```bash
+make dev      # 開発モード（ホットリロード対応）
+# または
+make start    # 本番モード
+```
 
-- 動的コンテンツ管理
-- バナー広告ローテーション
-- 遅延画像読み込み
-- スムーズスクロール
-- PWA 対応準備
+4. サイトへアクセス
 
-## 📦 インストール & 実行
-
-### 🎯 ゼロから始める完全構築手順
-
-#### ステップ 1: 環境準備
+- http://localhost:3000
+- `make open` で自動オープンも可能
 
 ```bash
 # Node.js 18以上がインストールされていることを確認
@@ -51,9 +48,6 @@ npm --version   # 確認
 #### ステップ 2: プロジェクト取得・セットアップ
 
 ```bash
-# プロジェクトディレクトリに移動
-cd /home/taie/test/site
-
 # 環境確認と依存関係インストール（推奨）
 make setup
 
@@ -119,64 +113,6 @@ make logs
 
 # クリーンアップ
 make clean
-```
-
-### ⚠️ トラブルシューティング
-
-#### ポート 3000 が使用中の場合
-
-```bash
-# 使用中プロセス確認
-lsof -i :3000
-
-# プロセス終了
-make stop
-# または
-pkill -f "node server.js"
-```
-
-#### 依存関係の問題
-
-```bash
-# 完全リセット
-make clean-all
-make setup
-```
-
-#### サーバーファイルの問題
-
-```bash
-# サーバーファイルの構文チェック
-node -c server.js
-
-# 手動でサーバー起動（エラー確認）
-node server.js
-
-# ログ確認
-make logs
-cat server.log
-```
-
-#### SEO 機能が動作しない場合
-
-```bash
-# サイトマップ確認
-curl http://localhost:3000/sitemap.xml
-
-# robots.txt確認
-curl http://localhost:3000/robots.txt
-
-# サーバー再起動
-make restart
-```
-
-#### 権限エラー
-
-```bash
-# Node.jsのグローバルインストール先を確認
-npm config get prefix
-
-# 必要に応じてnpmの権限設定を変更
 ```
 
 ### 🛠️ 従来の npm コマンド
@@ -264,7 +200,6 @@ npm start
 
 テスト環境では実際の画像の代わりに CSS 生成された代用要素を使用：
 
-- キャラクター画像 → グラデーション背景 + テキスト
 - 広告バナー → CSS 生成デザイン
 - ロゴ → テキストベース表示
 - QR コード → CSS 代用ボックス
@@ -375,25 +310,6 @@ curl http://localhost:3000 | grep -A 20 'application/ld+json'
 4. **CDN**: 静的アセット配信最適化
 5. **監視**: ログ・メトリクス設定
 
-## 📁 プロジェクト構造
-
-```
-/home/taie/test/site/
-├── Makefile                   # 効率的な開発フロー管理
-├── dev-script.sh             # 高速開発スクリプト
-├── server.js                # Express サーバー
-├── package.json             # 依存関係管理（拡張済み）
-├── views/
-│   └── index.ejs           # メインテンプレート
-├── public/
-│   ├── css/
-│   │   └── style.css       # メインスタイル
-│   ├── js/
-│   │   └── script.js       # クライアントサイドJS
-│   └── images/             # 画像アセット（代用対応）
-└── setup-port-forwarding.sh  # ポート80設定スクリプト
-```
-
 ## ⚡ 高速開発フロー
 
 ### 🎯 初回開発者向け
@@ -435,14 +351,29 @@ make status
 make restart
 ```
 
-## 👨‍💻 開発情報
-
-**開発者**: GitHub Copilot (フルスタックエンジニア)  
-**開発日**: 2025 年 8 月 6 日  
-**バージョン**: 1.0.0  
-**ライセンス**: MIT
-
 ---
 
-**📞 サポート**: 技術的な質問やカスタマイズ要望があればお気軽にお声かけください。
-# -
+## クローン＆構築手順（Makefile 推奨）
+
+1. リポジトリをクローン
+
+```bash
+git clone git@github.com:taienobutaka/site.test.git
+cd site.test
+```
+
+2. Makefile でセットアップ＆起動
+
+```bash
+make setup   # 依存関係インストール・初期化
+make dev     # 開発モードで起動（ホットリロード対応）
+# または
+make start   # 本番モードで起動
+```
+
+3. ブラウザでアクセス
+
+- http://localhost:3000
+- `make open` で自動オープンも可能
+
+---
