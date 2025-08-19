@@ -94,7 +94,68 @@
   </head>
 
   <body>
-    <div class="container">
+    <!-- サイトアクセス時の全画面バナー広告 -->
+    <div
+      id="full-banner-ad"
+      style="
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      "
+    >
+      <div
+        style="
+          background: #fff;
+          padding: 32px 24px 24px 24px;
+          border-radius: 12px;
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+          max-width: 90vw;
+          max-height: 80vh;
+          text-align: center;
+          position: relative;
+        "
+      >
+        <img
+          src="/images/og-image.jpg"
+          alt="バナー広告"
+          style="
+            max-width: 320px;
+            width: 80vw;
+            height: auto;
+            margin-bottom: 16px;
+          "
+        />
+        <h2 style="font-size: 1.5rem; margin-bottom: 8px">
+          【PR】今だけ限定！アニメ・エンタメ最新情報
+        </h2>
+        <p style="margin-bottom: 16px">
+          2025年8月8日受注販売開始！<br />最新アニメ・ゲーム情報や特典をチェック！
+        </p>
+        <button
+          id="close-banner-btn"
+          style="
+            background: #ff6b6b;
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+          "
+        >
+          閉じる
+        </button>
+      </div>
+    </div>
+    <div class="container" id="site-main-container" style="display: none">
       <!-- 画像に完全忠実なトップヘッダー -->
       <header class="top-header">
         <div class="header-container">
@@ -408,138 +469,23 @@
             </div>
           </aside>
         </div>
-        <div class="content-grid">
-          <!-- 左カラム -->
-          <div class="left-column">
-            <!-- ニュースセクション -->
-            <section class="news-section">
-              <h2 class="section-title">新着情報</h2>
-              <ul class="news-list">
-                <li class="news-item">
-                  <span class="news-date">2025/8/6</span>
-                  <a href="#" class="news-link"
-                    >新キャラクターの発表、来週に決定</a
-                  >
-                </li>
-                <li class="news-item">
-                  <span class="news-date">2025/8/2</span>
-                  <a href="#" class="news-link"
-                    >2025年8月17日・23日：オンライン イベント
-                    メンテナンス実施のお知らせ</a
-                  >
-                </li>
-              </ul>
-            </section>
-
-            <!-- ダウンロードセクション -->
-            <section class="download-section">
-              <div class="download-card">
-                <h3>新着情報：原点にいるもの達、未来へと進む</h3>
-                <div class="download-content">
-                  <div class="download-image">
-                    <div>プレビュー画像</div>
-                  </div>
-                  <div class="download-info">
-                    <h4>コーディングテスト.zip</h4>
-                    <p class="download-date">
-                      ダウンロード期間：2025年11月9日(日)
-                    </p>
-                    <p class="download-size">ファイルサイズ：1.1MB</p>
-                    <div class="download-buttons">
-                      <button class="btn btn-primary">ダウンロード</button>
-                      <button class="btn btn-secondary">アップロード</button>
-                      <button class="btn btn-tertiary">使い方</button>
-                    </div>
-                    <div class="qr-code">
-                      <div
-                        style="
-                          width: 60px;
-                          height: 60px;
-                          background: #333;
-                          border-radius: 5px;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                          color: white;
-                          font-size: 0.8rem;
-                        "
-                      >
-                        QR
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          <!-- 右カラム -->
-          <div class="right-column">
-            <!-- 広告バナー（Avvy） -->
-            <div class="ad-banner avvy-banner">
-              <!-- Avvy banner content handled by CSS -->
-            </div>
-
-            <!-- プログラミング学習バナー -->
-            <div class="ad-banner programming-banner">
-              <div class="banner-content">
-                <h3>プログラミング学習</h3>
-                <p>Laravel×人材育成</p>
-                <p>大学生×プログラミング教育×転職×人材育成</p>
-                <p>システム×プログラミング教育×転職×副業×在宅ワーク</p>
-                <p>Python×人材育成</p>
-                <p>大学生×プログラミング教育×転職×人材育成！</p>
-                <div class="banner-logo">
-                  <div
-                    style="
-                      height: 40px;
-                      width: 120px;
-                      background: rgba(255, 255, 255, 0.3);
-                      border-radius: 20px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      color: white;
-                      font-weight: bold;
-                      font-size: 0.8rem;
-                    "
-                  >
-                    ポテパンキャンプ
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 企業バナー -->
-            <div class="ad-banner company-banner">
-              <!-- Green banner content handled by CSS -->
-            </div>
-          </div>
-        </div>
       </main>
-
-      <!-- フッターバナー広告（動的） -->
-      <footer class="footer">
-        <div class="footer-banners" id="dynamic-banners">
-          <% bannerAds.forEach(function(ad) { %>
-          <div class="banner-ad" style="background-color: <%= ad.bgColor %>">
-            <div class="banner-text">
-              <h3><%= ad.title %></h3>
-              <p class="banner-subtitle"><%= ad.subtitle %></p>
-              <p class="banner-description"><%= ad.description %></p>
-              <% if (ad.instructor) { %>
-              <p class="banner-instructor"><%= ad.instructor %></p>
-              <% } %> <% if (ad.company) { %>
-              <p class="banner-company"><%= ad.company %></p>
-              <% } %>
-            </div>
-            <button class="banner-btn"><%= ad.buttonText %></button>
-          </div>
-          <% }); %>
-        </div>
-      </footer>
     </div>
 
     <script src="/js/script.js"></script>
+    <script>
+      // サイトアクセス時に全画面バナーを表示し、閉じると本体を表示
+      document.addEventListener("DOMContentLoaded", function () {
+        var banner = document.getElementById("full-banner-ad");
+        var main = document.getElementById("site-main-container");
+        var closeBtn = document.getElementById("close-banner-btn");
+        if (banner && main && closeBtn) {
+          closeBtn.addEventListener("click", function () {
+            banner.style.display = "none";
+            main.style.display = "";
+          });
+        }
+      });
+    </script>
   </body>
 </html>
