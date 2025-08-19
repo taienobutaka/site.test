@@ -272,56 +272,26 @@
         <div class="video-ad-container">
           <!-- 左側バナー広告エリア（将来追加予定） -->
           <aside class="video-left-ads">
-            <div
-              id="slidein-banner"
-              style="
-                position: absolute;
-                top: 60px;
-                left: 0;
-                transform: translateX(-120%);
-                transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
-                background: #fffbe6;
-                border: 2px solid #ffb300;
-                border-radius: 10px;
-                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
-                padding: 24px 18px 18px 18px;
-                min-width: 220px;
-                max-width: 260px;
-                z-index: 10;
-                opacity: 0.98;
-              "
-            >
-              <div
-                style="
-                  font-size: 1.1rem;
-                  font-weight: bold;
-                  color: #ff6b35;
-                  margin-bottom: 8px;
-                "
-              >
-                【PR】今だけ限定！
-              </div>
-              <div
-                style="font-size: 1.3rem; font-weight: bold; margin-bottom: 6px"
-              >
-                アニメ・エンタメ最新情報
-              </div>
-              <div style="font-size: 0.95rem; margin-bottom: 10px">
-                2025年8月8日受注販売開始！<br />最新アニメ・ゲーム情報や特典をチェック！
-              </div>
-              <a
-                href="#"
-                style="
-                  display: inline-block;
-                  background: #ffb300;
-                  color: #fff;
-                  padding: 8px 18px;
-                  border-radius: 5px;
-                  text-decoration: none;
-                  font-weight: bold;
-                "
-                >詳しく見る</a
-              >
+            <div id="slidein-banner" style="
+              position: absolute;
+              top: 60px;
+              left: 0;
+              transform: translateX(-120%);
+              transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+              background: #fffbe6;
+              border: 2px solid #ffb300;
+              border-radius: 10px;
+              box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+              padding: 24px 18px 18px 18px;
+              min-width: 220px;
+              max-width: 260px;
+              z-index: 10;
+              opacity: 0.98;
+            ">
+              <div style="font-size:1.1rem;font-weight:bold;color:#ff6b35;margin-bottom:8px;">【PR】今だけ限定！</div>
+              <div style="font-size:1.3rem;font-weight:bold;margin-bottom:6px;">アニメ・エンタメ最新情報</div>
+              <div style="font-size:0.95rem;margin-bottom:10px;">2025年8月8日受注販売開始！<br>最新アニメ・ゲーム情報や特典をチェック！</div>
+              <a href="#" style="display:inline-block;background:#ffb300;color:#fff;padding:8px 18px;border-radius:5px;text-decoration:none;font-weight:bold;">詳しく見る</a>
             </div>
           </aside>
 
@@ -593,23 +563,20 @@
     <script src="/js/script.js"></script>
     <script>
       // スクロールで左バナーをスライドイン
-      document.addEventListener("DOMContentLoaded", function () {
-        var banner = document.getElementById("slidein-banner");
+      document.addEventListener('DOMContentLoaded', function() {
+        var banner = document.getElementById('slidein-banner');
         if (!banner) return;
         var shown = false;
-        var observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting && !shown) {
-                banner.style.transform = "translateX(0)";
-                shown = true;
-              }
-            });
-          },
-          { threshold: 0.3 }
-        );
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting && !shown) {
+              banner.style.transform = 'translateX(0)';
+              shown = true;
+            }
+          });
+        }, { threshold: 0.3 });
         // 動画セクションを監視
-        var videoSection = document.querySelector(".video-section");
+        var videoSection = document.querySelector('.video-section');
         if (videoSection) {
           observer.observe(videoSection);
         }
