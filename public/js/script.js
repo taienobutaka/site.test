@@ -3,15 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
   var slideinBanner = document.getElementById("slidein-banner");
   var videoSection = document.querySelector(".video-section");
   if (slideinBanner && videoSection && "IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          slideinBanner.style.transform = "translateX(0)";
-        } else {
-          slideinBanner.style.transform = "translateX(-120%)";
-        }
-      });
-    }, { threshold: 0.3 });
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            slideinBanner.style.transform = "translateX(0)";
+          } else {
+            slideinBanner.style.transform = "translateX(-120%)";
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
     observer.observe(videoSection);
   }
 });
