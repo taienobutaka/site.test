@@ -1,10 +1,9 @@
 # エンターテイメントサイト
-![alt text](<スクリーンショット 2025-08-20 094802.png>)
 
-![alt text](<スクリーンショット 2025-08-20 094825.png>)
-
-![alt text](<スクリーンショット 2025-08-20 094845.png>)
-## ポートフォリオ向けアピールポイント
+![alt text](./screenshot1.png)
+![alt text](./screenshot2.png)
+![alt text](./screenshot3.png)
+ポートフォリオ向けアピールポイント
 
 - モダンな UI/UX・レスポンシブデザイン（スマホ/PC 両対応）
 - Node.js + Express + EJS によるフルスタック SPA
